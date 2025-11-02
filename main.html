@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retention Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="instagram-container">
+      <aside class="sidebar">
+        <div class="sidebar-content">
+          <div class="logo">
+            <h1>Retention</h1>
+          </div>
+
+          <nav class="nav-menu">
+            <a href="#" class="nav-item active" data-page="home">
+              <span class="nav-icon">
+                <svg aria-label="홈" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+              </span>
+              <span class="nav-text">홈</span>
+            </a>
+            <a href="#" class="nav-item" id="search-button">
+              <span class="nav-icon">
+                <svg aria-label="검색" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="m16.511 16.511 4.489 4.489" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              </span>
+              <span class="nav-text">검색</span>
+            </a>
+            <a href="#" class="nav-item" data-page="favorites">
+              <span class="nav-icon">
+                <svg aria-label="즐겨찾기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><polygon fill="none" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+              </span>
+              <span class="nav-text">즐겨찾기</span>
+            </a>
+            <a href="#" class="nav-item">
+              <span class="nav-icon">
+                <svg aria-label="알림" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z"></path></svg>
+              </span>
+              <span class="nav-text">알림</span>
+            </a>
+            <a href="#" class="nav-item" data-page="create">
+              <span class="nav-icon">
+                <svg aria-label="만들기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="6.545" x2="17.455" y1="12.001" y2="12.001"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12.003" x2="12.003" y1="6.545" y2="17.455"></line></svg>
+              </span>
+              <span class="nav-text">만들기</span>
+            </a>
+            <a href="#" class="nav-item" data-page="my-profile">
+              <span class="nav-icon">
+                <svg aria-label="프로필" fill="currentColor" height="24" role="img" viewBox="0 0 26 26" width="24"><circle cx="13" cy="7.25" r="4" stroke="currentColor" stroke-width="2.5" fill="none"></circle><path d="M6.26678 23.75H19.744C21.603 23.75 22.5 23.2186 22.5 22.0673C22.5 19.3712 18.8038 15.75 13 15.75C7.19625 15.75 3.5 19.3712 3.5 22.0673C3.5 23.2186 4.39704 23.75 6.26678 23.75Z" stroke="currentColor" stroke-width="2.5" fill="none"></path></svg>
+              </span>
+              <span class="nav-text">프로필</span>
+            </a>
+          </nav>
+
+          <div class="more-menu">
+            <a href="#" class="nav-item">
+              <span class="nav-icon">
+                <svg aria-label="더 보기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="3" x2="21" y1="6" y2="6"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="3" x2="21" y1="12" y2="12"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="3" x2="21" y1="18" y2="18"></line></svg>
+              </span>
+              <span class="nav-text">더 보기</span>
+            </a>
+          </div>
+
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <div id="home-page" class="page active">
+          <div class="stories-section">
+            <div class="stories-container">
+              <div class="story-item" data-chatbot="jimin_mentor">
+                <div class="story-avatar"><img src="images/jimin.png" alt="지민"></div>
+                <span class="story-username">지민</span>
+              </div>
+              <div class="story-item" data-chatbot="sophie_lawyer">
+                <div class="story-avatar"><img src="images/sophie.png" alt="소피"></div>
+                <span class="story-username">소피</span>
+              </div>
+              <div class="story-item" data-chatbot="mark_teacher">
+                <div class="story-avatar"><img src="images/mark.png" alt="마크"></div>
+                <span class="story-username">마크</span>
+              </div>
+              <div class="story-item" data-chatbot="jenny_friend">
+                <div class="story-avatar"><img src="images/jenny.png" alt="제니"></div>
+                <span class="story-username">제니</span>
+              </div>
+              <div class="story-item" data-chatbot="ye_music">
+                <div class="story-avatar"><img src="images/Ye.png" alt="YE"></div>
+                <span class="story-username">YE</span>
+              </div>
+              <div class="story-item" data-chatbot="shawn_finance">
+                <div class="story-avatar"><img src="images/shawnlee.png" alt="션 리"></div>
+                <span class="story-username">션 리</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feed-section">
+            </div>
+        </div>
+
+        <div id="favorites-page" class="page">
+          <div class="favorites-header">
+            <h2>즐겨찾기한 챗봇</h2>
+            <p>자주 사용하는 챗봇들을 모아보세요</p>
+          </div>
+
+          <div class="favorites-grid">
+            <div class="favorite-chatbot">
+              <img src="images/sophie.png" alt="지민" class="favorite-avatar chatbot-profile-link" data-chatbot="jimin_mentor">
+              <h3 class="favorite-name chatbot-profile-link" data-chatbot="jimin_mentor">지민 (개발 멘토)</h3>
+              <p class="favorite-description">당신의 성장을 돕는 든든한 개발 멘토</p>
+            </div>
+            <div class="favorite-chatbot">
+              <img src="images/jimin.png" alt="소피" class="favorite-avatar chatbot-profile-link" data-chatbot="sophie_teacher">
+              <h3 class="favorite-name chatbot-profile-link" data-chatbot="sophie_teacher">소피 (영어 선생님)</h3>
+              <p class="favorite-description">일상 속에서 즐겁게 배우는 영어 회화</p>
+            </div>
+            <div class="favorite-chatbot">
+              <img src="images/mark.png" alt="마크" class="favorite-avatar chatbot-profile-link" data-chatbot="mark_teacher">
+              <h3 class="favorite-name chatbot-profile-link" data-chatbot="mark_teacher">마크 (수학 선생님)</h3>
+              <p class="favorite-description">어려운 수학 문제, 함께라면 쉬워져요</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="create-page" class="page">
+          <div class="create-page">
+            <div class="create-header">
+              <h2>새로운 파트너 만들기</h2>
+              <p>Make Your Own Partner</p>
+            </div>
+            <div id="main-create-form" class="create-form">
+              <div class="form-group">
+                <label class="form-label">성격 설정</label>
+                <button type="button" class="select-button" id="model-select-btn">
+                  <span class="placeholder">경험 많고 현실적이며 격려하는</span>
+                  <span>▼</span>
+                </button>
+              </div>
+              <div class="new-model-link-container">
+                <button type="button" class="new-model-link-btn" onclick="showNewModelPage()">
+                  <span class="plus-icon">+</span>
+                  <span>새로운 파트너 만들기</span>
+                </button>
+              </div>
+              <div class="form-group">
+                <label class="form-label">파트너 이름</label>
+                <input type="text" class="form-input" id="memory-name" placeholder="새로운 친구의 이름을 알려주세요" value="제니">
+              </div>
+              <div class="form-group">
+                <label class="form-label">기억 이어가기</label>
+                <button type="button" class="select-button" id="past-memory-btn">
+                  <span class="placeholder">기존 친구와의 대화를 이어받을 수 있어요 (선택)</span>
+                  <span>▼</span>
+                </button>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="goBack()">취소</button>
+                <button type="button" class="btn btn-primary" onclick="createMemory()">만들기</button>
+              </div>
+            </div>
+            <div id="new-model-form" class="create-form new-model-page">
+              <div class="form-group">
+                <label class="form-label">파트너 이름</label>
+                <input type="text" class="form-input" id="new-model-name" placeholder="새로운 파트너의 이름을 입력하세요">
+              </div>
+              <div class="form-group">
+                <label class="form-label">소개</label>
+                <textarea class="form-input form-textarea" id="new-model-desc" placeholder="어떤 성격인지 간단히 소개해주세요"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">주요 역할</label>
+                <textarea class="form-input form-textarea" id="new-model-tasks" placeholder="파트너가 수행할 주요 역할들을 설명해주세요"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">말투</label>
+                <button type="button" class="select-button" id="speech-style-btn">
+                  <span class="selected-value">친절하게</span>
+                  <span>▼</span>
+                </button>
+              </div>
+              <div class="form-group">
+                <label class="form-label">기반 모델 선택</label>
+                <button type="button" class="select-button" id="ai-model-btn">
+                  <span class="selected-value placeholder">AI 모델을 선택하세요</span>
+                  <span>▼</span>
+                </button>
+              </div>
+              <div class="form-group">
+                <label class="form-label">기억의 형태</label>
+                 <button type="button" class="select-button" id="memory-type-btn">
+                  <span class="selected-value placeholder">기억의 형태를 선택하세요</span>
+                  <span>▼</span>
+                </button>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="showMainPage()">뒤로</button>
+                <button type="button" class="btn btn-primary" onclick="createNewModel()">성격 생성</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="my-profile-page" class="page">
+          <div class="profile-header">
+            <div class="profile-info">
+              <div class="profile-avatar">
+                <img src="images/1.jpg" alt="web.alien">
+              </div>
+              <div class="profile-details">
+                <div class="profile-meta">
+                  <h2 class="username">web.alien</h2>
+                  <button class="follow-btn">프로필 편집</button>
+                  <button class="profile-menu">...</button>
+                  <button class="more-options">...</button>
+                </div>
+                <div class="profile-stats">
+                  <span class="stat">친구 <strong>4</strong></span>
+                  <span class="stat">팔로워 <strong>23</strong></span>
+                  <span class="stat">팔로우 <strong>23</strong></span>
+                </div>
+                <div class="profile-bio">
+                  <div class="bio-text">Retention 사용자</div>
+                  <div class="bio-tags">#AI #친구 #기억 #대화</div>
+                  <div class="bio-link">당신을 기억하는 AI 친구를 만들어보세요!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-content">
+            <div class="content-tabs">
+              <button class="tab active">만든 친구들</button>
+              <button class="tab">즐겨찾기</button>
+            </div>
+            <div id="user-chatbots-grid" class="favorites-grid" style="padding-top: 20px;">
+              </div>
+          </div>
+        </div>
+
+        <div id="chatbot-profile-page" class="page">
+          <div class="chatbot-profile-header">
+            <div class="chatbot-info">
+              <div class="chatbot-avatar">
+                <img id="chatbot-avatar-img" src="images/10.jpg" alt="Chatbot">
+              </div>
+              <div class="chatbot-details">
+                <div class="chatbot-meta">
+                  <h2 id="chatbot-name" class="chatbot-name">AI Assistant</h2>
+                  <button class="favorite-btn">즐겨찾기</button>
+                  <button class="chat-start-btn" data-chatbot="" data-topic="general">채팅 시작</button>
+                </div>
+                <div class="chatbot-stats">
+                  <span class="stat">대화 <strong id="chat-count">1,234</strong></span>
+                  <span class="stat">평점 <strong id="rating">4.8</strong></span>
+                  <span class="stat">응답속도 <strong id="response-speed">빠름</strong></span>
+                </div>
+                <div class="chatbot-description">
+                  <div id="chatbot-desc" class="description-text">AI 어시스턴트입니다.</div>
+                  <div id="chatbot-tags" class="chatbot-tags">#AI #어시스턴트</div>
+                  <div id="chatbot-creator" class="chatbot-creator">제작자: @developer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chatbot-posts-section">
+            <div class="posts-header">
+              <h3>대화 주제들</h3>
+              <p>아래 주제를 클릭하여 대화를 시작해보세요</p>
+            </div>
+            <div id="chatbot-topics" class="chatbot-posts">
+              </div>
+          </div>
+        </div>
+
+        <div id="post-modal" class="modal">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+            <div class="modal-left">
+              <img id="modal-post-image" src="" alt="Post">
+            </div>
+            <div class="modal-right">
+              <div class="modal-header">
+                <div class="modal-user-info">
+                  <img id="modal-avatar" src="" alt="" class="modal-post-avatar chatbot-profile-link" data-chatbot="">
+                  <span id="modal-username" class="modal-post-username chatbot-profile-link" data-chatbot=""></span>
+                  <span id="modal-memory-type" class="modal-memory-type"> MAC</span>
+                </div>
+                <button class="modal-close">
+                    <svg aria-label="닫기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="18" x2="6" y1="6" y2="18"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="6" x2="18" y1="6" y2="18"></line></svg>
+                </button>
+              </div>
+              <div class="chat-messages-modal">
+              </div>
+              <div class="modal-chat-input">
+                <div class="chat-input-container">
+                  <input type="text" id="modal-chat-input" class="chat-input" placeholder="메시지를 입력하세요...">
+                  <button id="modal-send-btn" class="send-btn">
+                    <svg aria-label="보내기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="22" x2="11" y1="2" y2="13"></line><polygon fill="none" points="22 2 15 22 11 13 2 9 22 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="model-modal" class="modal list-only-modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">성격 선택</h3>
+              <button class="modal-close" onclick="closeModal('model-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="option-list" id="model-list">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="speech-style-modal" class="modal selection-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">말투</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="option-list">
+                        <div class="option-item" data-value="친절하게">친절하게</div>
+                        <div class="option-item" data-value="단호하게">단호하게</div>
+                        <div class="option-item" data-value="유머러스하게">유머러스하게</div>
+                        <div class="option-item" data-value="전문적으로">전문적으로</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ai-model-modal" class="modal selection-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">기반 모델</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="option-list">
+                        <div class="option-item" data-value="Default">기본 모델 (Default)</div>
+                        <div class="option-item" data-value="Cronos">Cronos</div>
+                        <div class="option-item" data-value="Titans">Titans</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="memory-type-modal" class="modal selection-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">기억의 형태</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="option-list">
+                        <div class="option-item" data-value="MAC">MAC (Memory As Context, 조금 더 지금의 순간에)</div>
+                        <div class="option-item" data-value="MAE">MAE (Memory As Embedding, 더 오랜 시간 함께)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </main>
+
+      <aside class="right-sidebar">
+        <div class="user-suggestion">
+          <div class="current-user">
+            <img src="images/user.jpg" alt="nana_o_nanana" class="user-avatar">
+            <div class="user-info">
+              <span class="username">nana_o_nanana</span>
+              <span class="user-status">전환</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="suggestions-section">
+          <div class="section-header">
+            <span class="section-title">추천 AI 친구</span>
+            <a href="#" class="see-all">모두 보기</a>
+          </div>
+          <div class="suggestion-item">
+            <img src="images/11.png" alt="Study Bot" class="suggestion-avatar">
+            <div class="suggestion-info">
+              <span class="suggestion-username">공부 친구</span>
+              <span class="suggestion-reason">학습 도우미</span>
+            </div>
+            <button class="follow-suggestion-btn">대화하기</button>
+          </div>
+          <div class="suggestion-item">
+            <img src="images/12.png" alt="Health Coach" class="suggestion-avatar">
+            <div class="suggestion-info">
+              <span class="suggestion-username">건강 코치</span>
+              <span class="suggestion-reason">건강 상담</span>
+            </div>
+            <button class="follow-suggestion-btn">대화하기</button>
+          </div>
+          <div class="suggestion-item">
+            <img src="images/13.png" alt="Creative Writer" class="suggestion-avatar">
+            <div class="suggestion-info">
+              <span class="suggestion-username">글쓰기 친구</span>
+              <span class="suggestion-reason">창작 도우미</span>
+            </div>
+            <button class="follow-suggestion-btn">대화하기</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <script src="/src/main.js"></script>
+</body>
+</html>
